@@ -1,0 +1,31 @@
+package com.example.quiz;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RatingBar;
+import android.widget.Toast;
+
+public class rateclass extends AppCompatActivity {
+
+    RatingBar ratingDemo;
+    Button ratingsubmitButton;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_rateclass);
+        getSupportActionBar().hide();
+
+            ratingDemo=(RatingBar)findViewById(R.id.ratingdemo);
+            ratingsubmitButton=(Button)findViewById(R.id.ratingsubmitButton);
+
+            ratingsubmitButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    float rvalue=ratingDemo.getRating();
+                    Toast.makeText(getApplicationContext(),"Rating:-"+rvalue,Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
